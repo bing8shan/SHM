@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SHM
+namespace Cn.Hardnuts.MainModule.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// IndexView.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class IndexView : UserControl
     {
-        public MainWindow()
+        public IndexView()
         {
             InitializeComponent();
         }

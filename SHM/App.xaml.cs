@@ -6,6 +6,8 @@ using Prism.Regions;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
+using SHM.Views;
+using Cn.Hardnuts.ICommService.Comm;
 
 namespace SHM
 {
@@ -15,6 +17,7 @@ namespace SHM
     public partial class App
     {
         Microsoft.Extensions.Logging.ILogger? _logger;
+        
 
         protected override Window CreateShell()
         {
@@ -24,6 +27,8 @@ namespace SHM
             TaskScheduler.UnobservedTaskException += OnUnobservedTaskException;
             //多线程异常
             AppDomain.CurrentDomain.UnhandledException += OnUnhandledException;
+
+            //MessageBox.Show("CreateShell");
 
             return Container.Resolve<MainWindow>();
         }
@@ -38,16 +43,18 @@ namespace SHM
             //}
             //else
             //    base.InitializeShell(shell);
-
+            //MessageBox.Show("InitializeShell");
             base.InitializeShell(shell);
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+           // MessageBox.Show("RegisterTypes");
             var factory = new NLog.Extensions.Logging.NLogLoggerFactory();
             _logger = factory.CreateLogger("NLog");
             //注入到Prism DI容器中
             containerRegistry.RegisterInstance(_logger);
+
 
 
         }
