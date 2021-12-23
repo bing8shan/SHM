@@ -16,6 +16,13 @@
             <RowDefinition Height="0"></RowDefinition>
         </Grid.RowDefinitions>
 
+        <Grid>
+            <StackPanel>
+                <MediaElement   Margin="0" x:Name="mediaElementWav" LoadedBehavior="Manual" UnloadedBehavior="Stop" Stretch="Fill"  Visibility="Collapsed" />
+                <MediaElement   Margin="0" x:Name="mediaElementMp4" LoadedBehavior="Manual" UnloadedBehavior="Stop" Stretch="Fill"  Visibility="Collapsed" />
+            </StackPanel>
+        </Grid>
+
         <Grid Grid.Row="1">
             <Grid.Background>
                 <ImageBrush ImageSource="/Cn.Hardnuts.Assets;component/images/bk.jpg" Stretch="UniformToFill" Opacity="0.32" />
@@ -54,17 +61,18 @@
         <StackPanel Panel.ZIndex="1" Grid.Row="2" Margin="0 -120 0 0" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button x:Name="btn_close" Margin=" 0 0 100 0"  Foreground="Red"
                           Style="{StaticResource MaterialDesignFloatingActionLightButton}"
-                          ToolTip="退出"
+                          materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                          materialDesign:ButtonProgressAssist.Value="-1"
+                          materialDesign:ButtonProgressAssist.IsIndeterminate="True"
                           Content="退出" FontSize="16"
                           IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" 
                           Cursor="Hand"
                     Command="{Binding ShowIndexCommand}"
                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
                     >
-                
-                
+                              
             </Button>
-        </StackPanel>
+         </StackPanel>
 
     </Grid>
 </Window>

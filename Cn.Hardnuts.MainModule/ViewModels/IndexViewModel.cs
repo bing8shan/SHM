@@ -16,11 +16,9 @@ namespace Cn.Hardnuts.MainModule.ViewModels
     public class IndexViewModel : BindableBase, INavigationAware
     {
         private IRegionManager _regionManager;
-        //private ILogger _logger;
         private IMainWindow _mainWindow;
         public IndexViewModel(IRegionManager regionManager, IMainWindow mainWindow)
         {
-            //this._logger = logger;
             this._regionManager = regionManager;
             this._mainWindow = mainWindow;
         }

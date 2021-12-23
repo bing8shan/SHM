@@ -27,9 +27,19 @@
   <ItemGroup>
     <ProjectReference Include="..\Cn.Hardnuts.Assets\Cn.Hardnuts.Assets.csproj" />
     <ProjectReference Include="..\Cn.Hardnuts.ICommService\Cn.Hardnuts.ICommService.csproj" />
+    <ProjectReference Include="..\Cn.Hardnuts.MainModule\Cn.Hardnuts.MainModule.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="media\ArianaGrande.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="media\PutIDCard.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="media\PutSBCard.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Nlog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

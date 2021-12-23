@@ -24,5 +24,22 @@ namespace Cn.Hardnuts.MainModule.Views
         {
             InitializeComponent();
         }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            //mediaElement1.Position = TimeSpan.Zero;
+            //mediaElement1.Play();
+            Clear();
+        }
+
+        /// <summary>
+        /// 初始化 清空数据
+        /// </summary>
+        private void Clear()
+        {           
+            
+        }
+
+       
     }
 }

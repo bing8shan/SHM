@@ -15,8 +15,4 @@
     <ProjectReference Include="..\Cn.Hardnuts.ICommService\Cn.Hardnuts.ICommService.csproj" />
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy &quot;$(ProjectDir)bin\Debug\net6.0-windows\Cn.Hardnuts.MainModule.dll&quot; &quot;D:\work2022\SHM\SHM\bin\Debug\net6.0-windows\&quot; /Y /S" />
-  </Target>
-
 </Project>

@@ -4,11 +4,219 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Cn.Hardnuts.MainModule.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:prism="http://prismlibrary.com/"   
              prism:ViewModelLocator.AutoWireViewModel="True"
+             
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBlock Text="Hello"/>
+             d:DesignHeight="800" d:DesignWidth="800" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Cn.Hardnuts.Assets;component/Themes/CommTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+    <Grid Margin="30">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2.3*"/>
+            <ColumnDefinition Width="26"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Border CornerRadius="3" Margin="0" Background="DarkBlue"  >
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10 0 0 0">
+                   
+                    <materialDesign:PackIcon Kind="RadioboxBlank" Width="15" Height="15" Foreground="White" Margin="0 3 3 0"  />
+                   
+                    <TextBlock Text="建卡步骤" FontSize="16" FontWeight="Heavy" Foreground="White"></TextBlock>
+                </StackPanel>
+                
+            </Border>
+            <Border Grid.Row="1" CornerRadius="3" Margin="0 0 0 100" Background="WhiteSmoke" BorderBrush="#ccc" BorderThickness="1"  >
+                <UniformGrid Rows="11" Columns="1">
+
+                    <Button Margin="5"  FontSize="13"  
+                        materialDesign:ShadowAssist.ShadowDepth="Depth3"                     
+                        Background="#9C27B3" BorderBrush="#ccc">
+                      
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                            <materialDesign:PackIcon Kind="Adjust" />
+                            <TextBlock Text="选择建卡方式"  />
+                        </StackPanel>
+
+                    </Button>
+                    
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <materialDesign:PackIcon Kind="ArrowDownThick"   Foreground="#848484" Width="30"  Height="30"/>
+                    </StackPanel>
+
+                    <Button  Margin="5"  FontSize="13" 
+                        Background="Transparent"  BorderBrush="#ccc">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Adjust" Foreground="#848484"  />
+                            <TextBlock Text="读取身份证信息" Foreground="#848484" />
+                        </StackPanel>
+                    </Button>
+
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <materialDesign:PackIcon Kind="ArrowDownThick"   Foreground="#848484" Width="30"  Height="30"/>
+                    </StackPanel>
+
+                    <Button  Margin="5"  FontSize="13" 
+                        Background="Transparent"  BorderBrush="#ccc">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Adjust" Foreground="#848484"  />
+                            <TextBlock Text="身份证信息" Foreground="#848484" />
+                        </StackPanel>
+                    </Button>
+
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <materialDesign:PackIcon Kind="ArrowDownThick"   Foreground="#848484" Width="30"  Height="30"/>
+                    </StackPanel>
+
+                    <Button  Margin="5"  FontSize="13" 
+                        Background="Transparent"  BorderBrush="#ccc">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Adjust" Foreground="#848484"  />
+                            <TextBlock Text="检查身份证信息" Foreground="#848484" />
+                        </StackPanel>
+                    </Button>
+
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <materialDesign:PackIcon Kind="ArrowDownThick"   Foreground="#848484" Width="30"  Height="30"/>
+                    </StackPanel>
+
+                    <Button  Margin="5"  FontSize="13" 
+                        Background="Transparent"  BorderBrush="#ccc">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Adjust" Foreground="#848484"  />
+                            <TextBlock Text="正在建卡" Foreground="#848484" />
+                        </StackPanel>
+                    </Button>
+
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <materialDesign:PackIcon Kind="ArrowDownThick"   Foreground="#848484" Width="30"  Height="30"/>
+                    </StackPanel>
+
+                    <Button  Margin="5"  FontSize="13" 
+                        Background="Transparent"  BorderBrush="#ccc">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Adjust" Foreground="#848484"  />
+                            <TextBlock Text="凭条打印" Foreground="#848484" />
+                        </StackPanel>
+                    </Button>
+
+
+                </UniformGrid>
+            
+            </Border>
+        </Grid>
+
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Border CornerRadius="3" Margin="0" Background="DarkBlue"  >
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10 0 0 0">
+
+                    <materialDesign:PackIcon Kind="RadioboxBlank" Width="15" Height="15" Foreground="White" Margin="0 3 3 0"  />
+
+                    <TextBlock Text="选择办卡方式" FontSize="16" FontWeight="Heavy"  FontStyle="Italic" Foreground="White"></TextBlock>
+                </StackPanel>
+
+            </Border>
+            
+            <Border x:Name="step0"  Grid.Row="1" CornerRadius="3" BorderThickness="1" Margin="0 0 0 100" Background="WhiteSmoke"  BorderBrush="#ccc" >
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                    <Button  Margin="20 20 20 20"   Height="80"                   
+                     materialDesign:ShadowAssist.ShadowDepth="Depth3" Cursor="Hand" 
+                     Command="{Binding SfzSignCommand}"
+                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=UserControl}}"
+                     >
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border CornerRadius="6"  Background="#9C27B3" BorderBrush="#9C27B3" >
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="6*"/>
+                                            <RowDefinition Height="2"/>
+                                            <RowDefinition Height="4*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Margin="5 0 5 0" >
+                                            <materialDesign:PackIcon Kind="ArrowRightBoldCircle" Width="15" Height="15"
+                                              VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"  />
+
+                                            <TextBlock Text="身份证签约" FontFamily="隶书" FontSize="24" Foreground="White"/>
+                                        </StackPanel>
+
+                                        <Border Grid.Row="1" BorderThickness="1" BorderBrush="AliceBlue" Margin="5 0 5 0"></Border>
+
+                                        <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"  >
+                                            <TextBlock Text="身份证充当诊疗卡" FontSize="14"   Foreground="White"/>
+                                        </StackPanel>
+
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button  Margin="20 20 20 20"   Height="80"                   
+                     materialDesign:ShadowAssist.ShadowDepth="Depth3" Cursor="Hand" 
+                     Command="{Binding CreateCardCommand}"
+                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=UserControl}}"
+                     >
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border CornerRadius="6"  Background="#9C27B3" BorderBrush="#9C27B3" >
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="6*"/>
+                                            <RowDefinition Height="2"/>
+                                            <RowDefinition Height="4*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Margin="5 0 5 0" >
+                                            <materialDesign:PackIcon Kind="ArrowRightBoldCircle" Width="15" Height="15"
+                                              VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"  />
+
+                                            <TextBlock Text="社保卡签约" FontFamily="隶书" FontSize="24" Foreground="White"/>
+                                        </StackPanel>
+
+                                        <Border Grid.Row="1" BorderThickness="1" BorderBrush="AliceBlue" Margin="5 0 5 0"></Border>
+
+                                        <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"  >
+                                            <TextBlock Text="社保卡充当诊疗卡" FontSize="14"   Foreground="White"/>
+                                        </StackPanel>
+
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                 </StackPanel>
+
+ 
+            </Border>
+            <Border x:Name="step1" Visibility="Collapsed"  Grid.Row="1" CornerRadius="3" BorderThickness="1" Margin="0 0 0 100" Background="WhiteSmoke"  BorderBrush="#ccc" >
+                <StackPanel  Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                </StackPanel>
+            </Border>
+
+
+        </Grid>
     </Grid>
 </UserControl>
