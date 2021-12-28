@@ -5,12 +5,16 @@ using Prism.Mvvm;
 using Prism.Regions;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace Cn.Hardnuts.MainModule.ViewModels
 {
@@ -18,10 +22,20 @@ namespace Cn.Hardnuts.MainModule.ViewModels
     {
         private IRegionManager _regionManager;
         private IMainWindow _mainWindow;
+        private DispatcherTimer timer = new DispatcherTimer();
         public CreateCardViewModel(IRegionManager regionManager, IMainWindow mainWindow)
         {
             this._regionManager = regionManager;
             this._mainWindow = mainWindow;
+            this.StepTitle = "选择办卡方式";
+        }
+
+        public string? _stepTitle;
+        public string? StepTitle {
+            get { return _stepTitle; } 
+            set {
+                    SetProperty<string?>(ref _stepTitle, value);
+                } 
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)
@@ -47,9 +61,35 @@ namespace Cn.Hardnuts.MainModule.ViewModels
 
         public void OnSfzSign(object parms)
         {
-            string path = System.AppDomain.CurrentDomain.BaseDirectory;
-            string file = Path.Combine(path, "./media/PutSBCard.wav");
-            _mainWindow.PlayWav(file, false);
+            CreateCardView? createCardView=parms as CreateCardView;
+            if (createCardView != null)
+            {
+                this.StepTitle= "读取身份证信息";
+                createCardView.Clear(1);
+                string path = System.AppDomain.CurrentDomain.BaseDirectory;
+                string file = Path.Combine(path, "./media/PutIDCard.wav");
+                _mainWindow.PlayWav(file, false);
+
+                //创建线程对身份证信息
+                timer.Interval = TimeSpan.FromSeconds(10);
+                timer.Tick += delegate
+                {
+                   
+                    timer.Stop();
+                    this.StepTitle = "身份证信息";
+                    createCardView.Clear(2);
+
+                    createCardView.txt_name.Text = "张三";
+                    createCardView.txt_idCard.Text = "410581201109280012";
+
+                };
+                timer.Start();
+
+                //Debug.WriteLine("读取身份证信息");
+            }
+            //string path = System.AppDomain.CurrentDomain.BaseDirectory;
+            //string file = Path.Combine(path, "./media/PutSBCard.wav");
+            //_mainWindow.PlayWav(file, false);
             //var createCardView= parms as CreateCardView;
             //MediaElement ME = createCardView!.mediaElement1;
 
@@ -61,6 +101,43 @@ namespace Cn.Hardnuts.MainModule.ViewModels
             //ME.Position = TimeSpan.Zero;
             //ME.Play();
         }
+
+        public ICommand CheckIdInfoCommand
+        {
+            get => new DelegateCommand<object>(OnCheckIdInfo);
+        }
+
+        public void OnCheckIdInfo(object parms)
+        {
+            CreateCardView? createCardView = parms as CreateCardView;
+            if (createCardView != null)
+            {
+                this.StepTitle = "检查身份证信息";
+                createCardView.Clear(3);
+                createCardView.padInfo.Title = "请输入电话号码";
+                createCardView.padInfo.ContentText = "";
+               // createCardView.padInfo
+
+                //创建线程检查身份证
+                //timer.Interval = TimeSpan.FromSeconds(10);
+                //timer.Tick += delegate
+                //{
+
+                //    timer.Stop();
+                //    this.StepTitle = "身份证信息";
+                //    createCardView.Clear(4);
+
+
+
+                //};
+                //timer.Start();
+
+                //Debug.WriteLine("读取身份证信息");
+            }
+           
+        }
+
+
 
 
     }

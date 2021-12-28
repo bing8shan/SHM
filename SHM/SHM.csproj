@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cn.Hardnuts.Assets\Cn.Hardnuts.Assets.csproj" />
+    <ProjectReference Include="..\Cn.Hardnuts.Controls\Cn.Hardnuts.Controls.csproj" />
     <ProjectReference Include="..\Cn.Hardnuts.ICommService\Cn.Hardnuts.ICommService.csproj" />
     <ProjectReference Include="..\Cn.Hardnuts.MainModule\Cn.Hardnuts.MainModule.csproj" />
   </ItemGroup>

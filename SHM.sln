@@ -11,7 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{07BD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cn.Hardnuts.MainModule", "Cn.Hardnuts.MainModule\Cn.Hardnuts.MainModule.csproj", "{214958F5-D95A-42EB-B7F4-10F6579A72A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cn.Hardnuts.ICommService", "Cn.Hardnuts.ICommService\Cn.Hardnuts.ICommService.csproj", "{7584C185-35C2-425A-A3A8-D5620BA26E85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cn.Hardnuts.ICommService", "Cn.Hardnuts.ICommService\Cn.Hardnuts.ICommService.csproj", "{7584C185-35C2-425A-A3A8-D5620BA26E85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cn.Hardnuts.Controls", "Cn.Hardnuts.Controls\Cn.Hardnuts.Controls.csproj", "{22DFD00C-4358-41B7-BBE6-60DE687CB412}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{7584C185-35C2-425A-A3A8-D5620BA26E85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7584C185-35C2-425A-A3A8-D5620BA26E85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7584C185-35C2-425A-A3A8-D5620BA26E85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22DFD00C-4358-41B7-BBE6-60DE687CB412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22DFD00C-4358-41B7-BBE6-60DE687CB412}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22DFD00C-4358-41B7-BBE6-60DE687CB412}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22DFD00C-4358-41B7-BBE6-60DE687CB412}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
