@@ -5,6 +5,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,9 +27,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cn.Hardnuts.Assets\Cn.Hardnuts.Assets.csproj" />
+    <ProjectReference Include="..\Cn.Hardnuts.Common.Utils\Cn.Hardnuts.Common.Utils.csproj" />
     <ProjectReference Include="..\Cn.Hardnuts.Controls\Cn.Hardnuts.Controls.csproj" />
     <ProjectReference Include="..\Cn.Hardnuts.ICommService\Cn.Hardnuts.ICommService.csproj" />
     <ProjectReference Include="..\Cn.Hardnuts.MainModule\Cn.Hardnuts.MainModule.csproj" />
+    <ProjectReference Include="..\MyDllLib\MyDllLib.csproj" />
+    <ProjectReference Include="..\MyUtilLib\MyUtilLib.csproj" />
   </ItemGroup>
 
   <ItemGroup>

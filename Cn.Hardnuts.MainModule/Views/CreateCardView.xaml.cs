@@ -113,18 +113,9 @@ namespace Cn.Hardnuts.MainModule.Views
                 this.txt_step5.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#848484"));
                 this.panel_step5.Visibility = Visibility.Collapsed;
             }
-
-            
-
-            
+           
         }
 
-        private void padInfo_ClickOk(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(padInfo.ContentText) || padInfo.ContentText.Length < 8){
-                return;
-            }
-            MessageBox.Show(padInfo.ContentText);
-        }
+      
     }
 }
