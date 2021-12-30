@@ -8,6 +8,11 @@ using System.Threading.Tasks;
 using System.Windows;
 using SHM.Views;
 using Cn.Hardnuts.ICommService.Comm;
+using System.Runtime.InteropServices;
+using MyDllLib;
+using MyUtilLib;
+using Cn.Hardnuts.Common.Utils;
+using Cn.Hardnuts.Entity;
 
 namespace SHM
 {
@@ -30,11 +35,25 @@ namespace SHM
 
             //MessageBox.Show("CreateShell");
 
+            LoginInfo loginInfo = new LoginInfo();
+
+            loginInfo.User = UtilHelper.GetAppConfig("User");
+            loginInfo.SHMUrl = UtilHelper.GetAppConfig("SHMUrl");
+            loginInfo.HisUrl = UtilHelper.GetAppConfig("HisUrl");
+            loginInfo.AppName = UtilHelper.GetAppConfig("AppName");
+            loginInfo.HisName = UtilHelper.GetAppConfig("HisName");
+            loginInfo.DeviceCode = UtilHelper.GetAppConfig("DeviceCode");
+            loginInfo.ReadCardInterVal = Convert.ToInt32(UtilHelper.GetAppConfig("ReadCardInterVal"));
+            loginInfo.ExitInterVal = Convert.ToInt32(UtilHelper.GetAppConfig("ExitInterVal"));
+
+            GlobalConst.LoginInfo = loginInfo;
+
             return Container.Resolve<MainWindow>();
         }
 
         protected override void InitializeShell(Window shell)
         {
+
 
             //Cn.Hardnuts.CommonUtils.Views.
             //if (Container.Resolve<Cn.Hardnuts.Main.Views.LoginView>().ShowDialog() == false)
@@ -44,6 +63,72 @@ namespace SHM
             //else
             //    base.InitializeShell(shell);
             //MessageBox.Show("InitializeShell");
+
+            //调用.net4打印
+            // PrintHelper ph = new PrintHelper();
+            //ph.Print(@"C:\l1\Release\mz.frx", @"C:\l1\Release\content.txt", "true","");
+            // MessageBox.Show(System.Text.Encoding.Default.ToString());
+
+            //身份证调通
+            //CardInfo cardInfo = new CardInfo();
+            //int ret = ReadCardUtil.ReadIdCard(ref cardInfo);
+            //if (ret == 0)
+            //{
+            //    MessageBox.Show(cardInfo.other);
+
+            //    string? ss= cardInfo.other;
+            //    if (ss != null)
+            //        ss = HttpHelper.Post("http://localhost:19080/utf8", ss);
+            //    MessageBox.Show(ss);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("错误");
+            //}
+
+
+            //身份证 异步方法调用
+            // CardInfo cardInfo = new CardInfo();
+            //MessageBox.Show("开始读");
+            //Task<CardInfo> task = ReadCardUtil.ReadIdCard(100,1000);
+            //CardInfo cardInfo = task.Result;
+            //if (cardInfo.ret == 0)
+            //{
+            //    MessageBox.Show(cardInfo.other);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("错误");
+            //}
+            //MessageBox.Show("结束读");
+            //二代社保卡可以了
+            //string s = Dcrf32Obj.getSiCardNO("USB", 9600);
+            //MessageBox.Show(s);
+            //string? ss;
+            //ss = HttpHelper.Post("http://localhost:19080/utf8", s);
+            //MessageBox.Show(ss);
+
+            //CardInfo cardInfo = new CardInfo();
+            //int ret = ReadCardUtil.ReadCardBas(ref cardInfo);
+            //if (ret == 0)
+            //{
+            //    MessageBox.Show(cardInfo.other);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("错误");
+            //}
+            //CardInfo cardInfo = new CardInfo();
+            //readCardBas(1, "", ref cardInfo);
+
+            //身份证序列号
+            //string ss = ReadCardUtil.ReadCertCardSnr();
+            //MessageBox.Show(ss);
+
+            //就诊卡
+            //string ss = ReadCardUtil.ReadJzCardSnr();
+            //MessageBox.Show(ss);
+
             base.InitializeShell(shell);
         }
 
@@ -114,6 +199,8 @@ namespace SHM
             //MiniDump.TryDump($"dumps\\Wemail_{ DateTime.Now.ToString("HH-mm-ss-ms") }.dmp");
         }
 
+     
+       
 
     }
 }

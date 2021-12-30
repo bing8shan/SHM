@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cn.Hardnuts.ICommService.Comm;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,16 +21,20 @@ namespace Cn.Hardnuts.MainModule.Views
     /// </summary>
     public partial class CreateCardView : UserControl
     {
-        public CreateCardView()
+        private IMainWindow _mainWindow;
+        public CreateCardView(IMainWindow mainWindow)
         {
             InitializeComponent();
+            this._mainWindow = mainWindow;
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             //mediaElement1.Position = TimeSpan.Zero;
             //mediaElement1.Play();
+            _mainWindow.InitTimer();
             Clear(0);
+            
         }
 
         /// <summary>
@@ -113,18 +118,9 @@ namespace Cn.Hardnuts.MainModule.Views
                 this.txt_step5.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#848484"));
                 this.panel_step5.Visibility = Visibility.Collapsed;
             }
-
-            
-
-            
+           
         }
 
-        private void padInfo_ClickOk(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(padInfo.ContentText) || padInfo.ContentText.Length < 8){
-                return;
-            }
-            MessageBox.Show(padInfo.ContentText);
-        }
+      
     }
 }

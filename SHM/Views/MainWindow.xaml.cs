@@ -1,5 +1,7 @@
-﻿using Cn.Hardnuts.ICommService.Comm;
+﻿using Cn.Hardnuts.Entity;
+using Cn.Hardnuts.ICommService.Comm;
 using Microsoft.Extensions.Logging;
+using SHM.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace SHM.Views
 {
@@ -25,12 +28,35 @@ namespace SHM.Views
         private bool _isCircleWav = false;
         private bool _isCircleMp4 = false;
         private ILogger _logger;
+
+        private DispatcherTimer timer = new DispatcherTimer();
+        private int times = 0;
+
         public MainWindow(ILogger logger)
         {
             InitializeComponent();
+
+            txt_appName.Text = GlobalConst.LoginInfo?.AppName;
+            txt_hisName.Text = GlobalConst.LoginInfo?.HisName;
             _logger = logger;
             this.ShowCloseBtn(false);
             MediaInit();
+
+            timer.Interval = TimeSpan.FromSeconds(2);
+            timer.Tick += delegate
+            {
+                times += 2;
+                if (times > GlobalConst.LoginInfo?.ExitInterVal)
+                {
+                    ShowCloseBtn(false);
+                }
+            };
+            timer.Start();
+        }
+
+        public void InitTimer()
+        {
+            times = 0;
         }
 
         private void MediaInit()
@@ -123,12 +149,20 @@ namespace SHM.Views
             mediaElementWav.Play();
         }
 
+        /// <summary>
+        /// 当关闭按钮隐藏时，显示主界面
+        /// </summary>
+        /// <param name="bVisible"></param>
         public void ShowCloseBtn(bool bVisible)
         {
             if (bVisible)
                 btn_close.Visibility = Visibility.Visible;
             else
-                btn_close.Visibility=Visibility.Collapsed;
+            {
+                btn_close.Visibility = Visibility.Collapsed;
+                MainWindowViewModel mvvm = (MainWindowViewModel)this.DataContext;
+                mvvm.OnShowIndex(this);
+            }
         }
 
         public void TipText(string msg)

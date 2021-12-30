@@ -16,21 +16,21 @@ using System.Windows.Shapes;
 namespace Cn.Hardnuts.Controls
 {
     /// <summary>
-    /// PadNumber.xaml 的交互逻辑
+    /// PadChar.xaml 的交互逻辑
     /// </summary>
-    public partial class PadNumber : UserControl, ICommandSource
+    public partial class PadChar : UserControl, ICommandSource
     {
         public static readonly RoutedEvent ClickOkEvent = EventManager.RegisterRoutedEvent(
-      "ClickOk", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(PadNumber));
+      "ClickOk", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(PadChar));
 
         public static readonly DependencyProperty ContentTextProperty;
         public static readonly DependencyProperty TitleProperty;
 
-        static PadNumber()
+        static PadChar()
         {
-            ContentTextProperty = DependencyProperty.Register("ContentText", typeof(String), typeof(PadNumber),
+            ContentTextProperty = DependencyProperty.Register("ContentText", typeof(String), typeof(PadChar),
                 new PropertyMetadata(null, new PropertyChangedCallback(OnDataChanged)));
-            TitleProperty = DependencyProperty.Register("Title", typeof(String), typeof(PadNumber),
+            TitleProperty = DependencyProperty.Register("Title", typeof(String), typeof(PadChar),
                    new PropertyMetadata(null, new PropertyChangedCallback(OnDataChanged)));
 
         }
@@ -44,7 +44,7 @@ namespace Cn.Hardnuts.Controls
         }
 
         public static readonly DependencyProperty CommandProperty =
-         DependencyProperty.Register("Command", typeof(ICommand), typeof(PadNumber), new UIPropertyMetadata(null));
+         DependencyProperty.Register("Command", typeof(ICommand), typeof(PadChar), new UIPropertyMetadata(null));
 
 
         public object CommandParameter
@@ -55,7 +55,7 @@ namespace Cn.Hardnuts.Controls
 
         // Using a DependencyProperty as the backing store for CommandParameter. This enables animation, styling, binding, etc... 
         public static readonly DependencyProperty CommandParameterProperty =
-         DependencyProperty.Register("CommandParameter", typeof(object), typeof(PadNumber), new UIPropertyMetadata(null));
+         DependencyProperty.Register("CommandParameter", typeof(object), typeof(PadChar), new UIPropertyMetadata(null));
 
         public IInputElement CommandTarget
         {
@@ -65,7 +65,7 @@ namespace Cn.Hardnuts.Controls
 
         // Using a DependencyProperty as the backing store for CommandTarget. This enables animation, styling, binding, etc... 
         public static readonly DependencyProperty CommandTargetProperty =
-         DependencyProperty.Register("CommandTarget", typeof(IInputElement), typeof(PadNumber), new UIPropertyMetadata(null));
+         DependencyProperty.Register("CommandTarget", typeof(IInputElement), typeof(PadChar), new UIPropertyMetadata(null));
 
 
         /*
@@ -91,14 +91,15 @@ namespace Cn.Hardnuts.Controls
 
         #endregion
 
+
         private string content = "";
         private string _title = "";
-        public PadNumber()
+        public PadChar()
         {
             InitializeComponent();
             content = "";
             _title = "";
-           
+
 
         }
 
@@ -116,11 +117,12 @@ namespace Cn.Hardnuts.Controls
             PadNumber ddi = (PadNumber)sender;
             if (e.Property == ContentTextProperty)
             {
-                ddi.ContentText = (string)e.NewValue;              
-            }else if (e.Property == TitleProperty)
+                ddi.ContentText = (string)e.NewValue;
+            }
+            else if (e.Property == TitleProperty)
             {
                 ddi.Title = (string)e.NewValue;
-                
+
             }
 
         }
@@ -141,7 +143,7 @@ namespace Cn.Hardnuts.Controls
 
         private void Button_Click_0(object sender, RoutedEventArgs e)
         {
-            content +=  "0";
+            content += "0";
             txt_text.Text = content;
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -161,12 +163,12 @@ namespace Cn.Hardnuts.Controls
         }
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            content +=  "4";
+            content += "4";
             txt_text.Text = content;
         }
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            content +=  "5";
+            content += "5";
             txt_text.Text = content;
         }
         private void Button_Click_6(object sender, RoutedEventArgs e)
@@ -176,7 +178,7 @@ namespace Cn.Hardnuts.Controls
         }
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
-            content +=  "7";
+            content += "7";
             txt_text.Text = content;
         }
         private void Button_Click_8(object sender, RoutedEventArgs e)
@@ -191,7 +193,7 @@ namespace Cn.Hardnuts.Controls
         }
         private void Button_Click__(object sender, RoutedEventArgs e)
         {
-            content +=  "_";
+            content += "_";
             txt_text.Text = content;
         }
 
@@ -210,16 +212,172 @@ namespace Cn.Hardnuts.Controls
         {
             if (content.Length > 0)
             {
-                content=content.Substring(0, content.Length - 1);
+                content = content.Substring(0, content.Length - 1);
                 txt_text.Text = content;
             }
+        }
+
+        private void Button_Click_A(object sender, RoutedEventArgs e)
+        {
+            content += "A";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_B(object sender, RoutedEventArgs e)
+        {
+            content += "B";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_C(object sender, RoutedEventArgs e)
+        {
+            content += "C";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_D(object sender, RoutedEventArgs e)
+        {
+            content += "D";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_E(object sender, RoutedEventArgs e)
+        {
+            content += "E";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_F(object sender, RoutedEventArgs e)
+        {
+            content += "F";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_G(object sender, RoutedEventArgs e)
+        {
+            content += "G";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_H(object sender, RoutedEventArgs e)
+        {
+            content += "H";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_I(object sender, RoutedEventArgs e)
+        {
+            content += "I";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_J(object sender, RoutedEventArgs e)
+        {
+            content += "J";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_K(object sender, RoutedEventArgs e)
+        {
+            content += "K";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_L(object sender, RoutedEventArgs e)
+        {
+            content += "L";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_M(object sender, RoutedEventArgs e)
+        {
+            content += "M";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_N(object sender, RoutedEventArgs e)
+        {
+            content += "N";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_O(object sender, RoutedEventArgs e)
+        {
+            content += "O";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_P(object sender, RoutedEventArgs e)
+        {
+            content += "P";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_Q(object sender, RoutedEventArgs e)
+        {
+            content += "Q";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_R(object sender, RoutedEventArgs e)
+        {
+            content += "R";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_S(object sender, RoutedEventArgs e)
+        {
+            content += "S";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_T(object sender, RoutedEventArgs e)
+        {
+            content += "T";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_U(object sender, RoutedEventArgs e)
+        {
+            content += "U";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_V(object sender, RoutedEventArgs e)
+        {
+            content += "V";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_W(object sender, RoutedEventArgs e)
+        {
+            content += "W";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_X(object sender, RoutedEventArgs e)
+        {
+            content += "X";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_Y(object sender, RoutedEventArgs e)
+        {
+            content += "Y";
+            txt_text.Text = content;
+        }
+
+        private void Button_Click_Z(object sender, RoutedEventArgs e)
+        {
+            content += "Z";
+            txt_text.Text = content;
         }
 
         private void Button_Click_ok(object sender, RoutedEventArgs e)
         {
             RoutedEventArgs newEventArgs = new RoutedEventArgs(ClickOkEvent);
             RaiseEvent(newEventArgs);
-            
+
             var command = Command;
             var parameter = CommandParameter;
             var target = CommandTarget;
@@ -234,7 +392,5 @@ namespace Cn.Hardnuts.Controls
                 command.Execute(parameter);
             }
         }
-
-
     }
 }

@@ -25,5 +25,7 @@ namespace Cn.Hardnuts.ICommService.Comm
 
         void PlayWav(String filePath,bool isCircle);
         void PlayMp4(String filePath, bool isCircle);
+
+        void InitTimer();
     }
 }

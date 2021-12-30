@@ -6,11 +6,11 @@
              xmlns:local="clr-namespace:Cn.Hardnuts.MainModule.Views"
              xmlns:my="clr-namespace:Cn.Hardnuts.Controls;assembly=Cn.Hardnuts.Controls" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             xmlns:prism="http://prismlibrary.com/"   
+             xmlns:prism="http://prismlibrary.com/" xmlns:viewmodels="clr-namespace:Cn.Hardnuts.MainModule.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:CreateCardViewModel}"
              prism:ViewModelLocator.AutoWireViewModel="True"
              
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="800" Loaded="UserControl_Loaded">
+             d:DesignHeight="800" d:DesignWidth="900" Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -43,74 +43,73 @@
             <Border Grid.Row="1" CornerRadius="3" Margin="0 0 0 100" Background="WhiteSmoke" BorderBrush="#ccc" BorderThickness="1"  >
                 <UniformGrid Rows="11" Columns="1">
 
-                    <Button x:Name="btn_step0" Margin="5"  FontSize="13"  
-                        materialDesign:ShadowAssist.ShadowDepth="Depth3"                     
+                    <Button x:Name="btn_step0" Margin="10"  FontSize="13"                    
                         Background="#9C27B3" BorderBrush="#ccc">
                       
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                            <materialDesign:PackIcon Kind="Adjust" />
-                            <TextBlock x:Name="txt_step0" Text="选择建卡方式"  />
+                            <materialDesign:PackIcon Kind="Adjust"  Foreground="#848484" Height="22"  />
+                            <TextBlock x:Name="txt_step0"  FontSize="16" Text="选择建卡方式"  />
                         </StackPanel>
 
                     </Button>
                     
                     <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <materialDesign:PackIcon Kind="ArrowDownThick"   Foreground="#848484" Width="30"  Height="30"/>
+                        <materialDesign:PackIcon Kind="ArrowDownThick"   Foreground="#848484" Width="40"  Height="40"/>
                     </StackPanel>
 
-                    <Button  x:Name="btn_step1"  Margin="5"  FontSize="13" 
+                    <Button  x:Name="btn_step1"  Margin="10"  FontSize="13" 
                         Background="Transparent"  BorderBrush="#ccc">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Adjust" Foreground="#848484"  />
-                            <TextBlock  x:Name="txt_step1" Text="读取身份证信息" Foreground="#848484" />
+                            <materialDesign:PackIcon Kind="Adjust" Foreground="#848484"  Height="22"  />
+                            <TextBlock  x:Name="txt_step1" FontSize="16" Text="读取身份证信息" Foreground="#848484" />
                         </StackPanel>
                     </Button>
 
                     <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <materialDesign:PackIcon Kind="ArrowDownThick"   Foreground="#848484" Width="30"  Height="30"/>
+                        <materialDesign:PackIcon Kind="ArrowDownThick"   Foreground="#848484"  Width="40"  Height="40"/>
                     </StackPanel>
 
-                    <Button  x:Name="btn_step2"  Margin="5"  FontSize="13" 
+                    <Button  x:Name="btn_step2"  Margin="10"  FontSize="13" 
                         Background="Transparent"  BorderBrush="#ccc">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Adjust" Foreground="#848484"  />
-                            <TextBlock  x:Name="txt_step2" Text="身份证信息" Foreground="#848484" />
+                            <materialDesign:PackIcon Kind="Adjust" Foreground="#848484"   Height="22"   />
+                            <TextBlock  x:Name="txt_step2" FontSize="16" Text="身份证信息" Foreground="#848484" />
                         </StackPanel>
                     </Button>
 
                     <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <materialDesign:PackIcon Kind="ArrowDownThick"   Foreground="#848484" Width="30"  Height="30"/>
+                        <materialDesign:PackIcon Kind="ArrowDownThick"   Foreground="#848484"  Width="40"  Height="40"/>
                     </StackPanel>
 
-                    <Button  x:Name="btn_step3"  Margin="5"  FontSize="13" 
+                    <Button  x:Name="btn_step3"  Margin="10"  FontSize="13" 
                         Background="Transparent"  BorderBrush="#ccc">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Adjust" Foreground="#848484"  />
-                            <TextBlock  x:Name="txt_step3"  Text="检查身份证信息" Foreground="#848484" />
+                            <materialDesign:PackIcon Kind="Adjust" Foreground="#848484"   Height="22"  />
+                            <TextBlock  x:Name="txt_step3" FontSize="16"  Text="检查身份证信息" Foreground="#848484" />
                         </StackPanel>
                     </Button>
 
                     <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <materialDesign:PackIcon Kind="ArrowDownThick"   Foreground="#848484" Width="30"  Height="30"/>
+                        <materialDesign:PackIcon Kind="ArrowDownThick"   Foreground="#848484"  Width="40"  Height="40"/>
                     </StackPanel>
 
-                    <Button  x:Name="btn_step4"  Margin="5"  FontSize="13" 
+                    <Button  x:Name="btn_step4"  Margin="10"  FontSize="13" 
                         Background="Transparent"  BorderBrush="#ccc">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Adjust" Foreground="#848484"  />
-                            <TextBlock  x:Name="txt_step4" Text="正在建卡" Foreground="#848484" />
+                            <materialDesign:PackIcon Kind="Adjust" Foreground="#848484"   Height="22"  />
+                            <TextBlock  x:Name="txt_step4" FontSize="16" Text="正在建卡" Foreground="#848484" />
                         </StackPanel>
                     </Button>
 
                     <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <materialDesign:PackIcon Kind="ArrowDownThick"   Foreground="#848484" Width="30"  Height="30"/>
+                        <materialDesign:PackIcon Kind="ArrowDownThick"   Foreground="#848484"  Width="40"  Height="40"/>
                     </StackPanel>
 
-                    <Button  x:Name="btn_step5"  Margin="5"  FontSize="13" 
+                    <Button  x:Name="btn_step5"  Margin="10"  FontSize="13" 
                         Background="Transparent"  BorderBrush="#ccc">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Adjust" Foreground="#848484"  />
-                            <TextBlock  x:Name="txt_step5" Text="凭条打印" Foreground="#848484" />
+                            <materialDesign:PackIcon Kind="Adjust" Foreground="#848484"   Height="22"   />
+                            <TextBlock  x:Name="txt_step5" FontSize="16" Text="凭条打印" Foreground="#848484" />
                         </StackPanel>
                     </Button>
 
@@ -137,80 +136,11 @@
             
             <Border x:Name="panel_step0"  Grid.Row="1" CornerRadius="3" BorderThickness="1" Margin="0 0 0 100" Background="WhiteSmoke"  BorderBrush="#ccc" >
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-
-                    <Button  Margin="20 20 20 20"   Height="80"                   
-                     materialDesign:ShadowAssist.ShadowDepth="Depth3" Cursor="Hand" 
-                     Command="{Binding SfzSignCommand}"
-                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=UserControl}}"
-                     >
-                        <Button.Template>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <Border CornerRadius="6"  Background="#9C27B3" BorderBrush="#9C27B3" >
-                                    <Grid>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="6*"/>
-                                            <RowDefinition Height="2"/>
-                                            <RowDefinition Height="4*"/>
-                                        </Grid.RowDefinitions>
-
-                                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Margin="5 0 5 0" >
-                                            <materialDesign:PackIcon Kind="ArrowRightBoldCircle" Width="15" Height="15"
-                                              VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"  />
-
-                                            <TextBlock Text="身份证签约" FontFamily="隶书" FontSize="24" Foreground="White"/>
-                                        </StackPanel>
-
-                                        <Border Grid.Row="1" BorderThickness="1" BorderBrush="AliceBlue" Margin="5 0 5 0"></Border>
-
-                                        <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"  >
-                                            <TextBlock Text="身份证充当诊疗卡" FontSize="14"   Foreground="White"/>
-                                        </StackPanel>
-
-                                    </Grid>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-
-                    <Button  Margin="20 20 20 20"   Height="80"                   
-                     materialDesign:ShadowAssist.ShadowDepth="Depth3" Cursor="Hand" 
-                     Command="{Binding CreateCardCommand}"
-                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=UserControl}}"
-                     >
-                        <Button.Template>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <Border CornerRadius="6"  Background="#9C27B3" BorderBrush="#9C27B3" >
-                                    <Grid>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="6*"/>
-                                            <RowDefinition Height="2"/>
-                                            <RowDefinition Height="4*"/>
-                                        </Grid.RowDefinitions>
-
-                                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Margin="5 0 5 0" >
-                                            <materialDesign:PackIcon Kind="ArrowRightBoldCircle" Width="15" Height="15"
-                                              VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"  />
-
-                                            <TextBlock Text="社保卡签约" FontFamily="隶书" FontSize="24" Foreground="White"/>
-                                        </StackPanel>
-
-                                        <Border Grid.Row="1" BorderThickness="1" BorderBrush="AliceBlue" Margin="5 0 5 0"></Border>
-
-                                        <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"  >
-                                            <TextBlock Text="社保卡充当诊疗卡" FontSize="14"   Foreground="White"/>
-                                        </StackPanel>
-
-                                    </Grid>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-
-                 </StackPanel>
-
- 
+                    <my:ReadCardU  CusVisible="zlk"  >
+                        
+                    </my:ReadCardU>
+                    
+                </StackPanel>
             </Border>
             <Border x:Name="panel_step1" Visibility="Collapsed"  Grid.Row="1" CornerRadius="3" BorderThickness="1" Margin="0 0 0 100" Background="WhiteSmoke"  BorderBrush="#ccc" >
                 <StackPanel  Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -279,7 +209,34 @@
             </Border>
             <Border x:Name="panel_step3" Visibility="Collapsed"  Grid.Row="1" CornerRadius="3" BorderThickness="1" Margin="0 0 0 100" Background="WhiteSmoke"  BorderBrush="#ccc" >
                 <StackPanel  Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <my:PadNumber x:Name="padInfo" Width="320" Height="360" ClickOk="padInfo_ClickOk" />
+                    <!--
+                    <my:PadNumber x:Name="padInfo" Width="320" Height="360" Command="{Binding ClickOkCommand}"
+                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=UserControl}}"
+                     >
+                        <my:PadNumber.Triggers>
+                            <EventTrigger RoutedEvent="my:PadNumber.ClickOk">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="1" BeginTime="00:00:00" Duration="00:00:01"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </my:PadNumber.Triggers>
+                    </my:PadNumber>
+                    -->
+                    <my:PadChar x:Name="padInfo" Width="580" Height="380" Command="{Binding ClickOkCommand}"
+                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=UserControl}}"
+                     >
+                        <my:PadChar.Triggers>
+                            <EventTrigger RoutedEvent="my:PadChar.ClickOk">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="1" BeginTime="00:00:00" Duration="00:00:01"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </my:PadChar.Triggers>
+                    </my:PadChar>
                 </StackPanel>
             </Border>
             <Border x:Name="panel_step4" Visibility="Collapsed"  Grid.Row="1" CornerRadius="3" BorderThickness="1" Margin="0 0 0 100" Background="WhiteSmoke"  BorderBrush="#ccc" >

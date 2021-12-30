@@ -50,28 +50,28 @@
               Width="50"
               Height="50"
               Content="1" FontSize="24"
-              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
 
         <Button Click="Button_Click_2"  Grid.Row="2" Grid.Column="1" 
               Style="{StaticResource MaterialDesignRaisedButton}"
               Width="50"
               Height="50"
               Content="2" FontSize="24"
-              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
 
         <Button Click="Button_Click_3"  Grid.Row="2" Grid.Column="2" 
               Style="{StaticResource MaterialDesignRaisedButton}"
               Width="50"
               Height="50"
               Content="3" FontSize="24"
-              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
 
         <Button Click="Button_Click_del"  Grid.Row="2" Grid.Column="3" 
               Style="{StaticResource MaterialDesignRaisedButton}"
               Width="50"
               Height="50"
               FontSize="24"
-              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" >
+              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" >
             <materialDesign:PackIcon Kind="CloseThick" />
         </Button>
 
@@ -81,28 +81,28 @@
               Height="50"
               
               Content="4" FontSize="24"
-              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
 
         <Button Click="Button_Click_5"  Grid.Row="3" Grid.Column="1" 
               Style="{StaticResource MaterialDesignRaisedButton}"
               Width="50"
               Height="50"
               Content="5" FontSize="24"
-              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
 
         <Button Click="Button_Click_6"  Grid.Row="3" Grid.Column="2" 
               Style="{StaticResource MaterialDesignRaisedButton}"
               Width="50"
               Height="50"
               Content="6" FontSize="24"
-              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
 
         <Button Click="Button_Click__"  Grid.Row="3" Grid.Column="3" 
               Style="{StaticResource MaterialDesignRaisedButton}"
               Width="50"
               Height="50"
               Content="_" FontSize="24"
-              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
 
 
         <Button Click="Button_Click_7"  Grid.Row="4" Grid.Column="0" 
@@ -110,37 +110,52 @@
               Width="50"
               Height="50"
               Content="7" FontSize="24"
-              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
 
         <Button Click="Button_Click_8"  Grid.Row="4" Grid.Column="1" 
               Style="{StaticResource MaterialDesignRaisedButton}"
               Width="50"
               Height="50"
               Content="8" FontSize="24"
-              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
 
         <Button Click="Button_Click_9"  Grid.Row="4" Grid.Column="2" 
               Style="{StaticResource MaterialDesignRaisedButton}"
               Width="50"
               Height="50"
               Content="9" FontSize="24"
-              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
 
 
-        <Button Click="Button_Click_0"  Grid.Row="4" Grid.Column="3" 
+        <Button Click="Button_Click_minus"  Grid.Row="4" Grid.Column="3" 
+              Style="{StaticResource MaterialDesignRaisedButton}"
+              Width="50"
+              Height="50"
+              Content="-" FontSize="24"
+              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+
+
+        <Button Click="Button_Click_0"  Grid.Row="5" Grid.Column="0" 
               Style="{StaticResource MaterialDesignRaisedButton}"
               Width="50"
               Height="50"
               Content="0" FontSize="24"
-              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+
+        <Button Click="Button_Click_dot"  Grid.Row="5" Grid.Column="1" 
+              Style="{StaticResource MaterialDesignRaisedButton}"
+              Width="50"
+              Height="50"
+              Content="." FontSize="24"
+              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
 
 
-        <Button Click="Button_Click_ok"  Grid.Row="5" Grid.Column="0"  Grid.ColumnSpan="4"
+        <Button Click="Button_Click_ok"  Grid.Row="5" Grid.Column="2"  Grid.ColumnSpan="2"
               Style="{StaticResource MaterialDesignRaisedButton}"
               Width="100"
               Height="40"
               Content="确  定" FontSize="24"
-              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
 
 
 

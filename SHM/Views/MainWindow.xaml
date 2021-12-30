@@ -46,8 +46,8 @@
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Left">
                         <Image Source="pack://application:,,,/Cn.Hardnuts.Assets;component/images/logo.png" Width="60" Height="60" Margin="30 0 0 10" />
 
-                        <TextBlock Text="XX市妇幼保健院" FontSize="45" FontFamily="楷体" Margin="10 0 0 0" Foreground="WhiteSmoke"/>
-                        <TextBlock Text="自助终端系统" FontSize="26" FontFamily="隶书" Margin="-40 40 0 0" Foreground="LightYellow"/>
+                        <TextBlock x:Name="txt_hisName" Text="XX市妇幼保健院" FontSize="45" FontFamily="楷体" Margin="10 0 0 0" Foreground="WhiteSmoke"/>
+                        <TextBlock x:Name="txt_appName" Text="自助终端系统" FontSize="26" FontFamily="隶书" Margin="-40 40 0 0" Foreground="LightYellow"/>
 
                     </StackPanel>
                 </Border>

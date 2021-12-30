@@ -28,6 +28,7 @@ namespace Cn.Hardnuts.MainModule.ViewModels
             this._regionManager = regionManager;
             this._mainWindow = mainWindow;
             this.StepTitle = "选择办卡方式";
+           
         }
 
         public string? _stepTitle;
@@ -137,7 +138,46 @@ namespace Cn.Hardnuts.MainModule.ViewModels
            
         }
 
+        public ICommand ClickOkCommand
+        {
+            get => new DelegateCommand<object>(OnClickOk);
+        }
+        public void OnClickOk(object parms)
+        {
+            CreateCardView? createCardView = parms as CreateCardView;
+            if (createCardView != null)
+            {
+                if (string.IsNullOrEmpty(createCardView.padInfo.ContentText) || createCardView.padInfo.ContentText.Length < 8)
+                {
+                    return;
+                }
 
+                //MessageBox.Show(createCardView.padInfo.ContentText);
+                this.StepTitle = "正在建卡";
+                createCardView.Clear(4);
+
+                
+
+                //创建线程对身份证信息
+                timer.Interval = TimeSpan.FromSeconds(10);
+                timer.Tick += delegate
+                {
+                    //调用建卡服务
+
+                    timer.Stop();
+                    this.StepTitle = "打印凭条";
+                    createCardView.Clear(5);
+
+                    //createCardView.txt_name.Text = "张三";
+                    //createCardView.txt_idCard.Text = "410581201109280012";
+
+                };
+                timer.Start();
+
+
+            }
+
+        }
 
 
     }

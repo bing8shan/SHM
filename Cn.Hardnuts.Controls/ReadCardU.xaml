@@ -1,0 +1,123 @@
+﻿<UserControl x:Class="Cn.Hardnuts.Controls.ReadCardU"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Cn.Hardnuts.Controls"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Cn.Hardnuts.Assets;component/Themes/CommTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+
+        <Button x:Name="btn_sfz" Click="btn_sfz_Click"   Margin="20 20 20 20"   Height="80"                   
+                     materialDesign:ShadowAssist.ShadowDepth="Depth3" Cursor="Hand"                     
+                     >
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border CornerRadius="6"  Background="#9C27B3" BorderBrush="#9C27B3" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="6*"/>
+                                <RowDefinition Height="2"/>
+                                <RowDefinition Height="4*"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Margin="5 0 5 0" >
+                                <materialDesign:PackIcon Kind="ArrowRightBoldCircle" Width="15" Height="15"
+                                              VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"  />
+
+                                <TextBlock Text="身份证" FontFamily="隶书" FontSize="24" Foreground="White"/>
+                            </StackPanel>
+
+                            <Border Grid.Row="1" BorderThickness="1" BorderBrush="AliceBlue" Margin="5 0 5 0"></Border>
+
+                            <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="15 0 15 0"  >
+                                <TextBlock Text="身份证充当诊疗卡" FontSize="14"   Foreground="White"/>
+                            </StackPanel>
+
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button  x:Name="btn_sbk" Click="btn_sbk_Click"  Margin="20 20 20 20"   Height="80"                   
+                     materialDesign:ShadowAssist.ShadowDepth="Depth3" Cursor="Hand" 
+                    
+                     >
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border CornerRadius="6"  Background="#9C27B3" BorderBrush="#9C27B3" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="6*"/>
+                                <RowDefinition Height="2"/>
+                                <RowDefinition Height="4*"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Margin="5 0 5 0" >
+                                <materialDesign:PackIcon Kind="ArrowRightBoldCircle" Width="15" Height="15"
+                                              VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"  />
+
+                                <TextBlock Text="社保卡" FontFamily="隶书" FontSize="24" Foreground="White"/>
+                            </StackPanel>
+
+                            <Border Grid.Row="1" BorderThickness="1" BorderBrush="AliceBlue" Margin="5 0 5 0"></Border>
+
+                            <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="15 0 15 0"  >
+                                <TextBlock Text="社保卡充当诊疗卡" FontSize="14"   Foreground="White"/>
+                            </StackPanel>
+
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button   x:Name="btn_zlk" Click="btn_zlk_Click"  Margin="20 20 20 20"   Height="80"         
+                     materialDesign:ShadowAssist.ShadowDepth="Depth3" Cursor="Hand" 
+                     >
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border CornerRadius="6"  Background="#9C27B3" BorderBrush="#9C27B3" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="6*"/>
+                                <RowDefinition Height="2"/>
+                                <RowDefinition Height="4*"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Margin="5 0 5 0" >
+                                <materialDesign:PackIcon Kind="ArrowRightBoldCircle" Width="15" Height="15"
+                                              VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"  />
+
+                                <TextBlock Text="诊疗卡" FontFamily="隶书" FontSize="24" Foreground="White"/>
+                            </StackPanel>
+
+                            <Border Grid.Row="1" BorderThickness="1" BorderBrush="AliceBlue" Margin="5 0 5 0"></Border>
+
+                            <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="35 0 35 0"  >
+                                <TextBlock Text="院内诊疗卡" FontSize="14"   Foreground="White"/>
+                            </StackPanel>
+
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+    </StackPanel>
+</UserControl>
